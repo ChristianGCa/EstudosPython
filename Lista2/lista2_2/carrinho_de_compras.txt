@@ -1,0 +1,6 @@
+Carrinho de Compras
+
+Cabo USB - Preço unitário: 12.9 - Quantidade: 24243
+Mouse Logitech - Preço unitário: 35.9 - Quantidade: 3
+
+Valor Total: 312842.4
