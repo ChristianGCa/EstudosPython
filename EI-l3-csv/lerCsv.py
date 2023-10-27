@@ -24,4 +24,4 @@ for row in arq:
         "nome_municipio": row[3],
         "populacao": row[4],
     }
-    print(row)
+    print(row, 'asd')
