@@ -48,5 +48,5 @@ for row in input:
 
     # Salvando em json
     with open("municipios.json", "w") as json_file:
-        json.dump(ufs, json_file, indent=2, ensure_ascii=False)
+        json.dump(ufs, json_file, indent=2)
 

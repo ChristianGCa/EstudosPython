@@ -21,7 +21,7 @@
     "municipios": [
       {
         "cod_municipio": 13,
-        "nome_municipio": "Acrelândia",
+        "nome_municipio": "Acrel\u00e2ndia",
         "populacao": 12707
       },
       {
@@ -37,12 +37,12 @@
     "municipios": [
       {
         "cod_municipio": 29,
-        "nome_municipio": "Alvarães",
+        "nome_municipio": "Alvar\u00e3es",
         "populacao": 159162
       },
       {
         "cod_municipio": 60,
-        "nome_municipio": "Amaturá",
+        "nome_municipio": "Amatur\u00e1",
         "populacao": 10814
       }
     ]
@@ -53,12 +53,12 @@
     "municipios": [
       {
         "cod_municipio": 16407,
-        "nome_municipio": "Vitória de Santo Antão",
+        "nome_municipio": "Vit\u00f3ria de Santo Ant\u00e3o",
         "populacao": 135182
       },
       {
         "cod_municipio": 16506,
-        "nome_municipio": "Xexéu",
+        "nome_municipio": "Xex\u00e9u",
         "populacao": 11288
       }
     ]
