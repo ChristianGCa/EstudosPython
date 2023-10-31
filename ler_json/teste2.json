@@ -1,0 +1,66 @@
+[
+  {
+    "uf": "RO",
+    "cod_uf": 11,
+    "municipios": [
+      {
+        "cod_municipio": 15,
+        "nome_municipio": "Alta Floresta D'Oeste",
+        "populacao": 21558
+      },
+      {
+        "cod_municipio": 23,
+        "nome_municipio": "Ariquemes",
+        "populacao": 100896
+      }
+    ]
+  },
+  {
+    "uf": "AC",
+    "cod_uf": 12,
+    "municipios": [
+      {
+        "cod_municipio": 13,
+        "nome_municipio": "Acrel\u00e2ndia",
+        "populacao": 12707
+      },
+      {
+        "cod_municipio": 54,
+        "nome_municipio": "Assis Brasil",
+        "populacao": 8157
+      }
+    ]
+  },
+  {
+    "uf": "AM",
+    "cod_uf": 13,
+    "municipios": [
+      {
+        "cod_municipio": 29,
+        "nome_municipio": "Alvar\u00e3es",
+        "populacao": 159162
+      },
+      {
+        "cod_municipio": 60,
+        "nome_municipio": "Amatur\u00e1",
+        "populacao": 10814
+      }
+    ]
+  },
+  {
+    "uf": "PE",
+    "cod_uf": 26,
+    "municipios": [
+      {
+        "cod_municipio": 16407,
+        "nome_municipio": "Vit\u00f3ria de Santo Ant\u00e3o",
+        "populacao": 135182
+      },
+      {
+        "cod_municipio": 16506,
+        "nome_municipio": "Xex\u00e9u",
+        "populacao": 11288
+      }
+    ]
+  }
+]
