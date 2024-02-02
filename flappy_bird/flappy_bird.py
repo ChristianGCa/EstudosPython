@@ -18,7 +18,7 @@ IMAGENS_PASSARO = [
 
 # Iniciando e definindo um texto
 pygame.font.init()
-FONTE_PONTOS = pygame.font.SysFont('arial', 50)
+FONTE_PONTOS = pygame.font.SysFont('arial', 40)
 
 class Passaro:
     IMGS = IMAGENS_PASSARO
@@ -214,12 +214,12 @@ def main():
             cano.mover()
             if cano.x + cano.CANO_TOPO.get_width() < 0:
                 remover_canos.append(cano)
-
+ 
         if adicionar_cano:
             pontos += 1
             canos.append(Cano(600))
         for cano in remover_canos:
-            cano.remove(cano)
+            canos.remove(cano)
         
         for i, passaro in enumerate(passaros):
             if (passaro.y + passaro.imagem.get_height()) > chao.y or passaro.y < 0:
