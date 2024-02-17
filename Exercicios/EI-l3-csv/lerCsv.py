@@ -46,6 +46,7 @@ for row in input:
         "populacao": int(row[4])
     })
 
+
     # Salvando em json
     with open("saida_em_json.json", "w") as json_file:
         json.dump(ufs, json_file, indent=2)
