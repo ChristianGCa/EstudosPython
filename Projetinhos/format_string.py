@@ -8,6 +8,6 @@ print(f"{person1} and {person2} are good guitarists!")
 adj = input("Adjective: ")
 verb = input("Verb: ")
 
-sentence = f"Play a electric guitar is very {adj}. With music, we can {verb}!!"
+sentence = f"Play a electric guitar is very {adj}. With music, we can {verb}!!!"
 
 print(sentence)
