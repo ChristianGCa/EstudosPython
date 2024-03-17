@@ -1,15 +1,7 @@
 import math
 import pandas as pd
-
-def importarDados():
-
-    with open('dados.txt', 'r') as arquivo:
-        linhas = arquivo.read()
-        dados = linhas.split()
-        for i in range(len(dados)):
-            dados[i] = float(dados[i])
-
-    return dados
+import tkinter as tk
+from tkinter import messagebox
 
 def menorValor(dados):
 
@@ -170,37 +162,60 @@ def coeficienteVariacao(desvio, media):
 
     return cv
 
-dados = importarDados()
+# Função para lidar com o botão "Calcular"
+def calcular():
+    try:
+        # Obtendo os dados inseridos pelo usuário
+        dados = list(map(float, entrada_dados.get().split()))
+        
+        # Realizando os cálculos
+        n = quantidadeDados(dados)
+        at = amplitudeTotal(dados)
+        k = quantidadeClasses(n)
+        h = amplitudeClasse(at, k)
+        minVal = menorValor(dados)
+        maxVal = maiorValor(dados)
 
-n = quantidadeDados(dados)
-at = amplitudeTotal(dados)
-k = quantidadeClasses(n)
-h = amplitudeClasse(at, k)
-minVal = menorValor(dados)
-maxVal = maiorValor(dados)
+        tabela = criarTabelaFrequencias(dados, h, minVal, maxVal)
+        somas = somasTabela(tabela)
 
-tabela = criarTabelaFrequencias(dados, h, minVal, maxVal)
-somas = somasTabela(tabela)
+        x = media(somas)
+        md = mediana(somas, tabela, h)
+        mo = moda(tabela, h)
+        variPop = varianciaPopulacional(somas)
+        variAmo = varianciaAmostral(somas)
+        desvio = desvioPadrao(variAmo)
+        cv = coeficienteVariacao(desvio, x)
 
-x = media(somas)
-md = mediana(somas, tabela, h)
-mo = moda(tabela, h)
-variPop = varianciaPopulacional(somas)
-variAmo = varianciaAmostral(somas)
-desvio = desvioPadrao(variAmo)
-cv = coeficienteVariacao(desvio, x)
+        tabela = addSomaTabela(tabela, somas)
 
-tabela = addSomaTabela(tabela, somas)
+        # Exibindo os resultados na interface gráfica
+        resultado_text.delete(1.0, tk.END)
+        resultado_text.insert(tk.END, str(tabela) + '\n\n')
+        resultado_text.insert(tk.END, f'Média: {x:.5f}\n')
+        resultado_text.insert(tk.END, f'Mediana: {md:.5f}\n')
+        resultado_text.insert(tk.END, f'Moda: {mo:.5f}\n')
+        resultado_text.insert(tk.END, f'Variância populacional: {variPop:.5f}\n')
+        resultado_text.insert(tk.END, f'Variância amostral: {variAmo:.5f}\n')
+        resultado_text.insert(tk.END, f'Desvio padrão: {desvio:.5f}\n')
+        resultado_text.insert(tk.END, f'Coeficiente de variação: {cv:.5f}%\n')
 
-print()
-print('-------------------------------- Tabela de Frequência --------------------------------')
-print(tabela)
-print()
-print('Média:                     %.2f' % x)
-print('Mediana:                   %.2f' % md)
-print('Moda:                      %.2f' % mo)
-print('Variância populacional:    %.2f' % variPop)
-print('Variância amostral:        %.2f' % variAmo)
-print('Desvio padrão:             %.2f' % desvio)
-print('Coeficiente de variação:   %.2f%%' % cv)
-print()
+    except ValueError:
+        messagebox.showerror('Erro', 'Certifique-se de inserir dados numéricos válidos.')
+
+# Criando a interface gráfica
+root = tk.Tk()
+root.title('Análise Estatística')
+
+# Criando os elementos da interface
+tk.Label(root, text='Insira os dados separados por espaço:').pack()
+entrada_dados = tk.Entry(root)
+entrada_dados.pack()
+
+calcular_button = tk.Button(root, text='Calcular', command=calcular)
+calcular_button.pack()
+
+resultado_text = tk.Text(root, height=15, width=200)
+resultado_text.pack()
+
+root.mainloop()
