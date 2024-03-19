@@ -36,12 +36,13 @@ def amplitudeClasse(at, k):
     h = at / k
     return math.ceil(h)
 
-def criarClasses(h, minval, maxval):
+def criarClasses(k, minval, maxval):
 
     classes = []
-    for i in range(int(minval), int(maxval), h):
-        classe = [i, i+h]
+    for i in range(int(minval), int(maxval), k):
+        classe = [i, i+k]
         classes.append(classe)
+    print(len(classes))
     return classes
 
 def criarTabelaFrequencias(dados, h, minval, maxval):
@@ -123,8 +124,16 @@ def moda(tabela, h):
     fi = tabela['fi']
     classe = fi.idxmax()
     li = tabela['li'].iloc[classe]
-    d1 = fi.iloc[classe] - tabela['fi'].iloc[classe - 1]
-    d2 = fi.iloc[classe] - tabela['fi'].iloc[classe + 1]
+
+    if classe == 0:
+        d1 = fi.iloc[classe]
+        d2 = fi.iloc[classe + 1]
+    elif classe == len(tabela) - 1:
+        d1 = fi.iloc[classe - 1]
+        d2 = fi.iloc[classe]
+    else:
+        d1 = fi.iloc[classe - 1]
+        d2 = fi.iloc[classe + 1]
 
     moda = li + ((d1 / (d1 + d2)) * h)
 
@@ -191,31 +200,36 @@ def calcular():
 
         # Exibindo os resultados na interface gráfica
         resultado_text.delete(1.0, tk.END)
+        resultado_text.insert(tk.END, 'Tabela de Frequências:\n\n')
         resultado_text.insert(tk.END, str(tabela) + '\n\n')
-        resultado_text.insert(tk.END, f'Média: {x:.5f}\n')
-        resultado_text.insert(tk.END, f'Mediana: {md:.5f}\n')
-        resultado_text.insert(tk.END, f'Moda: {mo:.5f}\n')
-        resultado_text.insert(tk.END, f'Variância populacional: {variPop:.5f}\n')
-        resultado_text.insert(tk.END, f'Variância amostral: {variAmo:.5f}\n')
-        resultado_text.insert(tk.END, f'Desvio padrão: {desvio:.5f}\n')
-        resultado_text.insert(tk.END, f'Coeficiente de variação: {cv:.5f}%\n')
+        resultado_text.insert(tk.END, f'Média: {x:.2f}\n')
+        resultado_text.insert(tk.END, f'Mediana: {md:.2f}\n')
+        resultado_text.insert(tk.END, f'Moda: {mo:.2f}\n')
+        resultado_text.insert(tk.END, f'Variância populacional: {variPop:.2f}\n')
+        resultado_text.insert(tk.END, f'Variância amostral: {variAmo:.2f}\n')
+        resultado_text.insert(tk.END, f'Desvio padrão: {desvio:.2f}\n')
+        resultado_text.insert(tk.END, f'Coeficiente de variação: {cv:.2f}%\n')
 
     except ValueError:
         messagebox.showerror('Erro', 'Certifique-se de inserir dados numéricos válidos.')
 
+# Definindo a fonte
+fonte = "Arial"
+tamanho_fonte = 16
+
 # Criando a interface gráfica
-root = tk.Tk()
-root.title('Análise Estatística')
+janela = tk.Tk()
+janela.title('Análise Estatística')
 
 # Criando os elementos da interface
-tk.Label(root, text='Insira os dados separados por espaço:').pack()
-entrada_dados = tk.Entry(root)
+tk.Label(janela, text='Insira os dados separados por espaço:', font=(fonte, tamanho_fonte)).pack(pady=10)
+entrada_dados = tk.Entry(janela, width=80, font=(fonte, tamanho_fonte))
 entrada_dados.pack()
 
-calcular_button = tk.Button(root, text='Calcular', command=calcular)
-calcular_button.pack()
+calcular_button = tk.Button(janela, text='Calcular', command=calcular, font=(fonte, tamanho_fonte))
+calcular_button.pack(pady=10)
 
-resultado_text = tk.Text(root, height=15, width=200)
+resultado_text = tk.Text(janela, height=18, width=120)
 resultado_text.pack()
 
-root.mainloop()
+janela.mainloop()
