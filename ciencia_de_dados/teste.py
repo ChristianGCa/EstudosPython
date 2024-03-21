@@ -13,7 +13,7 @@ with open('menor_agua_ar_qualidade.csv', 'r') as file:
 # Criando uma visualização das cidades com menor qualidade do ar (Quanto maior o valor, maior qualidade)
 df = pd.DataFrame(dados)
 print(df)
-df['AirQuality'] = pd.to_numeric(df['AirQuality'])
+df['AirQuality'] = df['AirQuality']
 df = df.sort_values(by='AirQuality', ascending=False)
 
 plt.bar(df['City'], df['AirQuality'])
