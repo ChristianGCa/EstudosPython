@@ -222,14 +222,14 @@ janela = tk.Tk()
 janela.title('Análise Estatística')
 
 # Criando os elementos da interface
-tk.Label(janela, text='Insira os dados separados por espaço:', font=(fonte, tamanho_fonte)).pack(pady=10)
+tk.Label(janela, text='Insira os dados separados por espaço:', font=(fonte, tamanho_fonte)).pack(pady=100)
 entrada_dados = tk.Entry(janela, width=80, font=(fonte, tamanho_fonte))
 entrada_dados.pack()
 
 calcular_button = tk.Button(janela, text='Calcular', command=calcular, font=(fonte, tamanho_fonte))
 calcular_button.pack(pady=10)
 
-resultado_text = tk.Text(janela, height=18, width=120)
+resultado_text = tk.Text(janela, font=(fonte), height=18, width=120)
 resultado_text.pack()
 
 janela.mainloop()
