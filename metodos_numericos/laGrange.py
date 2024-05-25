@@ -16,6 +16,7 @@ def lagrange_interpolating_polynomial(x, y):
     
     return expand(poly)
 
+
 # Função para plotar o polinômio interpolador e os pontos
 def plot_lagrange_interpolation(x, y, poly, x_interp, y_interp):
     plt.figure(figsize=(10, 6))
