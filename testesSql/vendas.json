@@ -1,0 +1,142 @@
+[
+    {
+        "id_venda": 441,
+        "dt_venda": "2014-10-01",
+        "nome_cliente": "alan turing",
+        "nome_vendedor": "maria elisa ange",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 541,
+        "dt_venda": "2014-07-03",
+        "nome_cliente": "blaise pascal",
+        "nome_vendedor": "maria elisa ange",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 12943,
+        "dt_venda": "2023-10-25",
+        "nome_cliente": "ada lovelace",
+        "nome_vendedor": "maria elisa ange",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 12945,
+        "dt_venda": "2023-10-25",
+        "nome_cliente": "ada lovelace",
+        "nome_vendedor": "maria elisa ange",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 62,
+        "dt_venda": "2014-06-24",
+        "nome_cliente": "blaise pascal",
+        "nome_vendedor": "lucas zardo dos reis",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 361,
+        "dt_venda": "2014-01-20",
+        "nome_cliente": "ada lovelace",
+        "nome_vendedor": "lucas zardo dos reis",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 442,
+        "dt_venda": "2014-06-20",
+        "nome_cliente": "frederick taylor",
+        "nome_vendedor": "lucas zardo dos reis",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 51,
+        "dt_venda": "2014-05-21",
+        "nome_cliente": "alan turing",
+        "nome_vendedor": "claudiomiro a nunes",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 122,
+        "dt_venda": "2014-04-22",
+        "nome_cliente": "frederick taylor",
+        "nome_vendedor": "claudiomiro a nunes",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 1292,
+        "dt_venda": "2014-05-02",
+        "nome_cliente": "charles babbage",
+        "nome_vendedor": "claudiomiro a nunes",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 12941,
+        "dt_venda": "2014-01-13",
+        "nome_cliente": "george boole",
+        "nome_vendedor": "claudiomiro a nunes",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 12942,
+        "dt_venda": "2014-03-14",
+        "nome_cliente": "george boole",
+        "nome_vendedor": "claudiomiro a nunes",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 1092,
+        "dt_venda": "2014-08-11",
+        "nome_cliente": "alan turing",
+        "nome_vendedor": "mirna s riat",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 2941,
+        "dt_venda": "2014-09-01",
+        "nome_cliente": "john von neumann",
+        "nome_vendedor": "mirna s riat",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 2,
+        "dt_venda": "2014-02-14",
+        "nome_cliente": "blaise pascal",
+        "nome_vendedor": "mara l batista",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 371,
+        "dt_venda": "2014-09-23",
+        "nome_cliente": "blaise pascal",
+        "nome_vendedor": "mara l batista",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 642,
+        "dt_venda": "2014-08-14",
+        "nome_cliente": "alan turing",
+        "nome_vendedor": "mara l batista",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 191,
+        "dt_venda": "2014-03-10",
+        "nome_cliente": "ada lovelace",
+        "nome_vendedor": "silvia maria",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 12944,
+        "dt_venda": "2023-11-26",
+        "nome_cliente": "blaise pascal",
+        "nome_vendedor": "silvia maria",
+        "vl_total_venda": null
+    },
+    {
+        "id_venda": 12946,
+        "dt_venda": "2023-11-26",
+        "nome_cliente": "blaise pascal",
+        "nome_vendedor": "silvia maria",
+        "vl_total_venda": null
+    }
+]

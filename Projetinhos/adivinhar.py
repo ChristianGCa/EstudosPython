@@ -14,4 +14,5 @@ def adivinha(x):
 
     print(f"\nParabéns! Você acertou o número. Resposta: {numero_aleatorio}. Tentativas: {tentativas}")
 
+
 adivinha(int(input("Valor máximo para o jogo: ")))

@@ -23,7 +23,7 @@ def ordenacao_insercao(arr):
 
 # Função para medir tempos de execução
 def medir_tempos_ordenacao():
-    tamanhos = [1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000]
+    tamanhos = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
     tempos_bolha = []
     tempos_insercao = []
 
@@ -59,7 +59,6 @@ tamanhos, tempos_bolha, tempos_insercao = medir_tempos_ordenacao()
 
 # Salvar em csv
 salvar_csv(tamanhos, tempos_bolha, tempos_insercao)
-
 
 # Plotar os resultados
 plt.figure(figsize=(12, 6))

@@ -1,0 +1,119 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# EXPECTATIVA DE VIDA DO BRASIL, OS 5 MELHORES E A MÉDIA
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Abrindo o arquivo csv
+df = pd.read_csv('expectativa_vida.csv')
+
+# Filtrar os dados para os países de interesse
+paises_interesse = ['Brazil', 'Japan', 'Switzerland', 'Australia', 'Spain', 'France']
+
+# Filtrar os dados para os países de interesse
+df_interesse = df[df['Country'].isin(paises_interesse)]
+
+# Configurar o tamanho do gráfico
+plt.figure(figsize=(10, 6))
+
+# Plotar a expectativa de vida em relação aos anos para cada país
+for pais in paises_interesse:
+    df_pais = df_interesse[df_interesse['Country'] == pais]
+    if pais == 'Brazil':
+        plt.plot(df_pais['Year'], df_pais['Life expectancy'], label=pais, color='black', linewidth=3)
+    else:
+        plt.plot(df_pais['Year'], df_pais['Life expectancy'], label=pais)
+
+# Calcular a média de cada ano
+df.groupby('Year')['Life expectancy'].mean().plot(color='blue', linestyle='--', label='Média Anual')
+
+# Adicionar rótulos e título ao gráfico
+plt.xlabel('Ano')
+plt.ylabel('Expectativa de Vida (Idade)')
+plt.title('Expectativa de vida do Brasil e dos cinco países com a maior ao longo do tempo')
+plt.legend()
+plt.grid(True)
+
+# Exibir o gráfico
+plt.show()
+
+# EXPECTATIVA DE VIDA DO BRASIL E VIZINHOS
+
+# Abrindo o arquivo csv
+df = pd.read_csv('expectativa_vida.csv')
+
+# Filtrar os dados para o Brasil e os países vizinhos
+paises_interesse = ['Brazil', 'Chile', 'Colombia', 'Ecuador', 'Peru', 'Argentina', 'Venezuela', 'Bolivia', 'Paraguay', 'Uruguay', 'Suriname'] 
+
+# Filtrar os dados para os países de interesse
+df_interesse = df[df['Country'].isin(paises_interesse)]
+
+# Configurar o tamanho do gráfico
+plt.figure(figsize=(10, 6))
+
+# Plotar a expectativa de vida em relação aos anos para cada país
+for pais in paises_interesse:
+    df_pais = df_interesse[df_interesse['Country'] == pais]
+    # Se o país for o Brasil, plotar o gráfico em preto
+    if pais == 'Brazil':
+        plt.plot(df_pais['Year'], df_pais['Life expectancy'], label=pais, color='black', linewidth=3)
+    else:
+        plt.plot(df_pais['Year'], df_pais['Life expectancy'], label=pais)
+
+# Adicionar rótulos e título ao gráfico
+plt.xlabel('Ano')
+plt.ylabel('Expectativa de Vida (Idade)')
+plt.title('Expectativa de vida do Brasil e os países vizinhos')
+plt.legend()
+plt.grid(True)
+
+# Exibir o gráfico
+plt.show()
+
+# PIB PER CAPITA E EXPECTATIVA DE VIDA
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Filtrar as colunas relevantes para o gráfico
+df_plot = df[['GDP', 'Life expectancy']]
+
+# Plotar o gráfico
+plt.figure(figsize=(10, 6))
+plt.scatter(df_plot['GDP'], df_plot['Life expectancy'])
+plt.xlabel('PIB per capita')
+plt.ylabel('Expectativa de Vida')
+plt.title('PIB per capita vs Expectativa de Vida')
+plt.grid(True)
+plt.show()
+
+# GASTOS COM SAÚDE E E. V.
+
+# Filtrar os dados para os anos de 2012, 2013 e 2014
+df_2012 = df[df['Year'] == 2012]
+df_2013 = df[df['Year'] == 2013]
+df_2014 = df[df['Year'] == 2014]
+
+# Calcular a porcentagem de gastos com saúde em relação ao PIB per capita em cada ano
+df_2012['expenditure percentage'] = df_2012['percentage expenditure'] / df_2012['GDP'] * 100
+df_2013['expenditure percentage'] = df_2013['percentage expenditure'] / df_2013['GDP'] * 100
+df_2014['expenditure percentage'] = df_2014['percentage expenditure'] / df_2014['GDP'] * 100
+
+# Filtrar as colunas relevantes para o gráfico para ambos os anos
+df_plot_2012 = df_2012[['expenditure percentage', 'Life expectancy']]
+df_plot_2013 = df_2013[['expenditure percentage', 'Life expectancy']]
+df_plot_2014 = df_2014[['expenditure percentage', 'Life expectancy']]
+
+# Plotar os gráficos para os anos selecionados
+plt.figure(figsize=(10, 6))
+plt.scatter(df_plot_2012['expenditure percentage'], df_plot_2012['Life expectancy'], label='2012')
+plt.scatter(df_plot_2013['expenditure percentage'], df_plot_2013['Life expectancy'], label='2013')
+plt.scatter(df_plot_2014['expenditure percentage'], df_plot_2014['Life expectancy'], label='2014')
+plt.xlabel('Porcentagem de gastos com saúde em relação ao PIB per capita (%)')
+plt.ylabel('Expectativa de Vida')
+plt.title('Comparação dos Gastos com Saúde e Expectativa de Vida em 2012, 2013 e 2014')
+plt.grid(True)
+plt.legend()
+plt.show()
